@@ -1,0 +1,123 @@
+name: tastemaker_ai
+description: "Tastemaker AI - Your Personal AI Chef for Traditional Indian Cooking"
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.10.4
+
+# ═══════════════════════════════════════════════════════════════════════════
+# Dependencies
+# ═══════════════════════════════════════════════════════════════════════════
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Icons
+  cupertino_icons: ^1.0.8
+
+  # HTTP client for API calls
+  http: ^1.2.0
+
+  # State management
+  provider: ^6.1.1
+
+  # Share functionality
+  share_plus: ^7.2.2
+
+  # URL launcher (WhatsApp / browser links)
+  url_launcher: ^6.2.4
+
+  # Typography
+  google_fonts: ^6.1.0
+
+  # ── PRODUCTION ADDITIONS ─────────────────────────────────────────────────
+
+  # Connectivity check (no-network guard before API calls)
+  # connectivity_plus: ^5.0.2
+
+  # Crash reporting — uncomment when adding Firebase to the project:
+  # firebase_core: ^3.6.0
+  # firebase_crashlytics: ^4.1.2
+  # firebase_analytics: ^11.3.2
+  # firebase_performance: ^0.10.0+8
+
+  # Secure local key-value storage (for future token/session persistence)
+  # flutter_secure_storage: ^9.2.2
+
+  # Error tracking without Firebase (alternative: Sentry)
+  # sentry_flutter: ^8.10.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.13.1
+  flutter_native_splash: ^2.4.0
+
+# ═══════════════════════════════════════════════════════════════════════════
+# Launcher Icon Configuration
+# ═══════════════════════════════════════════════════════════════════════════
+# Run: dart run flutter_launcher_icons
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  remove_alpha_ios: true        # Required for iOS App Store submission
+  image_path: "assets/icon/app_icon.png"
+  adaptive_icon_background: "#2E7D32"
+  adaptive_icon_foreground: "assets/icon/app_icon_foreground.png"
+  min_sdk_android: 21
+  web:
+    generate: true
+    image_path: "assets/icon/app_icon.png"
+    background_color: "#ffffff"
+    theme_color: "#2E7D32"
+  windows:
+    generate: true
+    image_path: "assets/icon/app_icon.png"
+    icon_size: 256
+
+# ═══════════════════════════════════════════════════════════════════════════
+# Native Splash Screen
+# ═══════════════════════════════════════════════════════════════════════════
+# Run: dart run flutter_native_splash:create
+flutter_native_splash:
+  color: "#ffffff"              # Background matches app lightCream feel
+  image: logo.png
+  color_dark: "#1B5E20"         # Dark mode background (darkGreen)
+  image_dark: logo.png
+  android: true
+  ios: true
+  web: false
+  # Fullscreen splash (hides status bar during splash)
+  fullscreen: true
+  android_gravity: center
+  ios_content_mode: center
+
+# ═══════════════════════════════════════════════════════════════════════════
+# Flutter SDK Settings
+# ═══════════════════════════════════════════════════════════════════════════
+flutter:
+  uses-material-design: true
+
+  # ── Assets ────────────────────────────────────────────────────────────────
+  # Asset optimization checklist (run before every release build):
+  #   1. Compress logo.png with TinyPNG / pngquant (target < 100 KB)
+  #   2. Provide @2x and @3x variants in assets/images/2.0x/ and 3.0x/
+  #   3. Use WebP for any large photographic assets (saves 25-35%)
+  assets:
+    - logo.png
+
+  # ── Fonts ─────────────────────────────────────────────────────────────────
+  # google_fonts handles Poppins at runtime with automatic caching.
+  # For fully offline / faster cold starts, bundle fonts locally:
+  #
+  # fonts:
+  #   - family: Poppins
+  #     fonts:
+  #       - asset: assets/fonts/Poppins-Regular.ttf
+  #       - asset: assets/fonts/Poppins-SemiBold.ttf
+  #         weight: 600
+  #       - asset: assets/fonts/Poppins-Bold.ttf
+  #         weight: 700
